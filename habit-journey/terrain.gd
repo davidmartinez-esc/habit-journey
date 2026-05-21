@@ -61,3 +61,24 @@ func update_mesh() -> void:
 	var array_mesh := ArrayMesh.new()
 	array_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, plane_arrays)
 	mesh = array_mesh
+	
+	if is_inside_tree():
+		# 1. Limpiamos CUALQUIER colisión vieja inmediatamente usando free()
+		for child in get_children():
+			if child is StaticBody3D:
+				child.free()
+		
+		# 2. Creamos el cuerpo físico a mano
+		var static_body := StaticBody3D.new()
+		add_child(static_body)
+		
+		# 3. Creamos el contenedor de la forma
+		var collision_shape := CollisionShape3D.new()
+		
+		# 4. Generamos la forma matemática exacta usando los triángulos de tu malla procedural
+		var concave_shape := ConcavePolygonShape3D.new()
+		concave_shape.set_faces(array_mesh.get_faces())
+		
+		# 5. Conectamos los componentes
+		collision_shape.shape = concave_shape
+		static_body.add_child(collision_shape)

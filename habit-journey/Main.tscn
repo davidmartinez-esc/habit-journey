@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://cs2ro2nlknxm"]
-
-[node name="Main" type="Node" unique_id=1735880663]
-
-[node name="WorldGen" type="Node" parent="." unique_id=317038352]
