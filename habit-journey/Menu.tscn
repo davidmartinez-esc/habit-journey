@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://w1f02opv8paf"]
 
+[ext_resource type="Script" uid="uid://1a2oj0e7s7a3" path="res://Menu.cs" id="1_uubjt"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxg2q"]
 bg_color = Color(0.9471994, 0.9471994, 0.9471994, 1)
 corner_radius_top_left = 20
@@ -14,13 +16,14 @@ shadow_offset = Vector2(0, 9)
 content_margin_top = 9.0
 bg_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
 
-[node name="Control" type="Control" unique_id=150268968]
+[node name="Menu" type="Control" unique_id=150268968]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uubjt")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1603080513]
 layout_mode = 1
@@ -92,3 +95,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rxg2q")
 text = "Tasks
 
 "
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="OnButtonPressed"]

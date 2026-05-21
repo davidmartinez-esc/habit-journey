@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ck2cc32b5mdn6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ee2tn"]
+size = Vector2(32, 32)
+subdivide_width = 32
+subdivide_depth = 32
+
+[node name="FloorChunk" type="StaticBody3D" unique_id=1127968955]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=52677294]
+mesh = SubResource("PlaneMesh_ee2tn")

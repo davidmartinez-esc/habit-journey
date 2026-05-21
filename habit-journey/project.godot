@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="HabitJourney"
-run/main_scene="uid://cs2ro2nlknxm"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://w1f02opv8paf"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
